@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+
 @main
 struct Next_callsApp: App {
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RemindersListView(viewModel : RemindersViewModel().requestAccess())
         }
     }
 }

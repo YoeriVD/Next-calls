@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct RemindersListView: View {
-    let items : [Item]
+    @StateObject var viewModel : RemindersViewModel
     
     var body: some View {
         NavigationView {
-            List(items) {
+            List(viewModel.reminders) {
                 item in Text(item.name)
             }
             .navigationTitle("Simple list")
@@ -20,10 +20,14 @@ struct RemindersListView: View {
     }
 }
 
+
 #Preview {
-    RemindersListView(items: [
-        Item(name: "Item 1"),
-        Item(name: "Item 2"),
-        Item(name: "Item 3")
-    ])
+    RemindersListView(viewModel: RemindersViewModel(
+        start: [
+                Item(name: "Item 1"),
+                Item(name: "Item 2"),
+                Item(name: "Item 3")
+            ]
+        )
+    )
 }

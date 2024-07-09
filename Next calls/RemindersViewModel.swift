@@ -16,8 +16,15 @@ struct Item: Identifiable {
 
 
 class RemindersViewModel: ObservableObject {
-    @Published var reminders: [Item] = []
+    @Published var reminders: [Item]
     private let eventStore = EKEventStore();
+    
+    init(start: [Item]){
+        self.reminders = start
+    }
+    convenience init(){
+        self.init(start: [])
+    }
     
 
     func requestAccess() -> RemindersViewModel {

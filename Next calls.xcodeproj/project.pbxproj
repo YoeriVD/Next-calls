@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */; };
-		2B97DC8F2C3D2EC500856519 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC8E2C3D2EC500856519 /* ContentView.swift */; };
+		2B97DC8F2C3D2EC500856519 /* RemindersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC8E2C3D2EC500856519 /* RemindersListView.swift */; };
 		2B97DC912C3D2EC700856519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97DC902C3D2EC700856519 /* Assets.xcassets */; };
 		2B97DC942C3D2EC700856519 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97DC932C3D2EC700856519 /* Preview Assets.xcassets */; };
 		2B97DC9E2C3D2EC900856519 /* Next_callsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC9D2C3D2EC900856519 /* Next_callsTests.swift */; };
 		2B97DCA82C3D2EC900856519 /* Next_callsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DCA72C3D2EC900856519 /* Next_callsUITests.swift */; };
 		2B97DCAA2C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DCA92C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift */; };
+		2B97DCB92C3D35A700856519 /* RemindersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DCB82C3D35A700856519 /* RemindersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		2B97DC892C3D2EC500856519 /* Next calls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next calls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_callsApp.swift; sourceTree = "<group>"; };
-		2B97DC8E2C3D2EC500856519 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2B97DC8E2C3D2EC500856519 /* RemindersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersListView.swift; sourceTree = "<group>"; };
 		2B97DC902C3D2EC700856519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B97DC932C3D2EC700856519 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B97DC992C3D2EC900856519 /* Next callsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next callsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		2B97DCA32C3D2EC900856519 /* Next callsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next callsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97DCA72C3D2EC900856519 /* Next_callsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_callsUITests.swift; sourceTree = "<group>"; };
 		2B97DCA92C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_callsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B97DCB82C3D35A700856519 /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */,
-				2B97DC8E2C3D2EC500856519 /* ContentView.swift */,
+				2B97DC8E2C3D2EC500856519 /* RemindersListView.swift */,
 				2B97DC902C3D2EC700856519 /* Assets.xcassets */,
 				2B97DC922C3D2EC700856519 /* Preview Content */,
+				2B97DCB82C3D35A700856519 /* RemindersViewModel.swift */,
 			);
 			path = "Next calls";
 			sourceTree = "<group>";
@@ -257,7 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B97DC8F2C3D2EC500856519 /* ContentView.swift in Sources */,
+				2B97DC8F2C3D2EC500856519 /* RemindersListView.swift in Sources */,
+				2B97DCB92C3D35A700856519 /* RemindersViewModel.swift in Sources */,
 				2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
