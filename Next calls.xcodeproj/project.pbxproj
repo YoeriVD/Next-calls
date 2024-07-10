@@ -14,7 +14,11 @@
 		2B97DC9E2C3D2EC900856519 /* Next_callsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC9D2C3D2EC900856519 /* Next_callsTests.swift */; };
 		2B97DCA82C3D2EC900856519 /* Next_callsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DCA72C3D2EC900856519 /* Next_callsUITests.swift */; };
 		2B97DCAA2C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DCA92C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift */; };
-		2B97DCB92C3D35A700856519 /* RemindersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DCB82C3D35A700856519 /* RemindersViewModel.swift */; };
+		2BDCA5642C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */; };
+		2BDCA5662C3E833A0081EB22 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5652C3E833A0081EB22 /* ErrorMessages.swift */; };
+		2BDCA5682C3E83A50081EB22 /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */; };
+		2BDCA56A2C3E84870081EB22 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5692C3E84870081EB22 /* Reminder.swift */; };
+		2BDCA56C2C3E84AD0081EB22 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,11 @@
 		2B97DCA32C3D2EC900856519 /* Next callsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next callsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97DCA72C3D2EC900856519 /* Next_callsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_callsUITests.swift; sourceTree = "<group>"; };
 		2B97DCA92C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_callsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2B97DCB82C3D35A700856519 /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
+		2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
+		2BDCA5652C3E833A0081EB22 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
+		2BDCA5692C3E84870081EB22 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */,
-				2B97DC8E2C3D2EC500856519 /* RemindersListView.swift */,
+				2BDCA56D2C3E8CC10081EB22 /* Views */,
 				2B97DC902C3D2EC700856519 /* Assets.xcassets */,
 				2B97DC922C3D2EC700856519 /* Preview Content */,
-				2B97DCB82C3D35A700856519 /* RemindersViewModel.swift */,
+				2BDCA56E2C3E8CDC0081EB22 /* Data */,
+				2BDCA56F2C3E8CEE0081EB22 /* Messages */,
+				2BDCA5702C3E8D0C0081EB22 /* Model */,
 			);
 			path = "Next calls";
 			sourceTree = "<group>";
@@ -128,6 +138,40 @@
 				2B97DCA92C3D2EC900856519 /* Next_callsUITestsLaunchTests.swift */,
 			);
 			path = "Next callsUITests";
+			sourceTree = "<group>";
+		};
+		2BDCA56D2C3E8CC10081EB22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B97DC8E2C3D2EC500856519 /* RemindersListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BDCA56E2C3E8CDC0081EB22 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */,
+				2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2BDCA56F2C3E8CEE0081EB22 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				2BDCA5652C3E833A0081EB22 /* ErrorMessages.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		2BDCA5702C3E8D0C0081EB22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */,
+				2BDCA5692C3E84870081EB22 /* Reminder.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B97DC8F2C3D2EC500856519 /* RemindersListView.swift in Sources */,
-				2B97DCB92C3D35A700856519 /* RemindersViewModel.swift in Sources */,
+				2BDCA56C2C3E84AD0081EB22 /* ReminderStore.swift in Sources */,
+				2BDCA56A2C3E84870081EB22 /* Reminder.swift in Sources */,
+				2BDCA5682C3E83A50081EB22 /* Reminder+EKReminder.swift in Sources */,
+				2BDCA5662C3E833A0081EB22 /* ErrorMessages.swift in Sources */,
+				2BDCA5642C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift in Sources */,
 				2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,8 +474,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Next calls/Preview Content\"";
+				DEVELOPMENT_TEAM = 52N37R27Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSRemindersUsageDescription = "We need to access your reminders to find scheduled calls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,8 +504,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Next calls/Preview Content\"";
+				DEVELOPMENT_TEAM = 52N37R27Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSRemindersUsageDescription = "We need to access your reminders to find scheduled calls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
