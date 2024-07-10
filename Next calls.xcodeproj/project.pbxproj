@@ -19,6 +19,7 @@
 		2BDCA5682C3E83A50081EB22 /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */; };
 		2BDCA56A2C3E84870081EB22 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5692C3E84870081EB22 /* Reminder.swift */; };
 		2BDCA56C2C3E84AD0081EB22 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */; };
+		2BDCA5732C3ED78B0081EB22 /* RemindersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5722C3ED78B0081EB22 /* RemindersListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
 		2BDCA5692C3E84870081EB22 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
+		2BDCA5722C3ED78B0081EB22 /* RemindersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		2B97DC8B2C3D2EC500856519 /* Next calls */ = {
 			isa = PBXGroup;
 			children = (
+				2BDCA5712C3ED76F0081EB22 /* ViewModels */,
 				2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */,
 				2BDCA56D2C3E8CC10081EB22 /* Views */,
 				2B97DC902C3D2EC700856519 /* Assets.xcassets */,
@@ -172,6 +175,14 @@
 				2BDCA5692C3E84870081EB22 /* Reminder.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2BDCA5712C3ED76F0081EB22 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2BDCA5722C3ED78B0081EB22 /* RemindersListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BDCA5732C3ED78B0081EB22 /* RemindersListViewModel.swift in Sources */,
 				2B97DC8F2C3D2EC500856519 /* RemindersListView.swift in Sources */,
 				2BDCA56C2C3E84AD0081EB22 /* ReminderStore.swift in Sources */,
 				2BDCA56A2C3E84870081EB22 /* Reminder.swift in Sources */,
