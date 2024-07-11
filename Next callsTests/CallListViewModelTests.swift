@@ -9,15 +9,15 @@ import XCTest
 @testable import Next_calls
 
 final class CallListViewModelTests: XCTestCase {
-
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testNoPhoneNumbers() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -30,10 +30,10 @@ final class CallListViewModelTests: XCTestCase {
             Reminder(title: "no phone number 1"),
             Reminder(title: "no phone number 23"),
         ]
-        let sut = NextCallListViewModel(reminders: input)
+        let sut = NextCallListViewModel(reminders: input, contacts: [])
         assert(sut.calls.count == 0)
     }
-
+    
     func testExtractPhoneNumber() throws {
         let testCases: [(input: String, expected: String)] = [
             // be (mobile)
@@ -49,13 +49,26 @@ final class CallListViewModelTests: XCTestCase {
             ( "Item +31611223199", "+31611223199"),
             ( "Item 0 6 11223199", "0611223199"),
             ( "Item 0611223199", "0611223199"),
+            // contacts
+            ("Bellen met Joske Vermeulen", "+32477885566"),
+            ("Bellen met joske vermeulen", "+32477885566")
         ]
-
+        
+        let contacts = [
+            Contact(
+                indexes: ["Joske Vermeulen", "Joske, Vermeulen", "Vermeulen Joske", "Vermeulen, Joske"],
+                phone: Phone(description: "test", number: "+32 477 88 55 66")
+            )
+        ]
+        
+        
         for (input, expected) in testCases {
-            let sut = NextCallListViewModel(reminders: [Reminder(title: input)])
+            let sut = NextCallListViewModel(reminders: [Reminder(title: input)],contacts: contacts)
             let result = sut.calls.first?.phone
             XCTAssertEqual(result, expected, "Failed for input: \(input)")
         }
     }
-
+    
+    
+    
 }

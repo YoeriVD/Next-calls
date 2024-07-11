@@ -14,3 +14,10 @@ struct Call: Identifiable {
         return URL(string: "tel://" + phone)
     }
 }
+
+extension String{
+    func cleanPhoneNumber() -> String {
+        return self.replacing(" ", with: "")
+    }
+}
+

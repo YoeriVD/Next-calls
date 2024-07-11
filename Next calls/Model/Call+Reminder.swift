@@ -12,7 +12,7 @@ extension Call {
             throw ErrorMessages.noPhone
         }
         self.reminder = reminder
-        self.phone = phone.replacing(" ", with: "")
+        self.phone = phone.cleanPhoneNumber()
     }
 }
 

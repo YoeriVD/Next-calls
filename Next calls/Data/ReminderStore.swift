@@ -47,14 +47,16 @@ final class ReminderStore{
         }
         let predicate = ekStore.predicateForReminders(in: nil)
         let ekReminders = try await ekStore.reminders(matching: predicate)
-        let reminders: [Reminder] = try ekReminders.compactMap { ekReminder in
-            do {
-                return try Reminder(with: ekReminder)
+        let reminders: [Reminder] = try ekReminders
+            .filter{reminder in !reminder.isCompleted }
+            .compactMap { ekReminder in
+                do {
+                    return try Reminder(with: ekReminder)
+                }
+                catch ErrorMessages.noTitle {
+                    return nil
+                }
             }
-            catch ErrorMessages.noTitle {
-                return nil
-            }
-        }
         return reminders
     }
 }

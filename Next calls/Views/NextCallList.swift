@@ -41,7 +41,8 @@ struct NextCallList: View {
                 Reminder(title: "Item 0477403040"),
                 Reminder(title: "Item 037700304"),
                 Reminder(title: "Item 03 770 03 04")
-            ]
+            ],
+            contacts: []
         )
     )
 }
