@@ -12,7 +12,7 @@ import SwiftUI
 struct Next_callsApp: App {
     var body: some Scene {
         WindowGroup {
-            RemindersListView(viewModel: RemindersListViewModel().fetchReminders())
+            NextCallList(viewModel: NextCallListViewModel().fetchReminders())
         }
     }
 }

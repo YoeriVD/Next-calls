@@ -13,6 +13,7 @@ enum ErrorMessages: LocalizedError {
     case accessDenied
     case accessRestricted
     case noTitle
+    case noPhone
     case unknown
     
     var errorDescription: String? {
@@ -32,6 +33,10 @@ enum ErrorMessages: LocalizedError {
         case .noTitle:
                    return NSLocalizedString(
                        "This reminder does not have a title.",
+                       comment: "Unable to determine if it is about a call.")
+        case .noPhone:
+                   return NSLocalizedString(
+                       "This reminder does not have a phone number.",
                        comment: "Unable to determine if it is about a call.")
         case .unknown:
             return NSLocalizedString("An unknown error occurred.", comment: "unknown error description")
