@@ -30,7 +30,9 @@ class NextCallListViewModel : ObservableObject {
                 try await reminderStore.requestAccess()
                 let reminders = try await reminderStore.readAll()
                 let calls = try extractCalls(reminders: reminders)
-                self.calls = calls
+                DispatchQueue.main.async{
+                    self.calls = calls
+                }
             } catch {
                 print(error.localizedDescription)
             }
