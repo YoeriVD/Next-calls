@@ -11,6 +11,10 @@
 		2B97DC8F2C3D2EC500856519 /* NextCallList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC8E2C3D2EC500856519 /* NextCallList.swift */; };
 		2B97DC912C3D2EC700856519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97DC902C3D2EC700856519 /* Assets.xcassets */; };
 		2B97DC942C3D2EC700856519 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97DC932C3D2EC700856519 /* Preview Assets.xcassets */; };
+		2BB36A492C412F0C001431DA /* CarPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB36A482C412F0C001431DA /* CarPlay.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2BB36A4C2C414CBF001431DA /* CarplayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB36A4B2C414CBF001431DA /* CarplayList.swift */; };
+		2BB36A4E2C416305001431DA /* CarPlayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB36A4D2C416305001431DA /* CarPlayDetail.swift */; };
+		2BB36A502C416387001431DA /* CarplayInterfaceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB36A4F2C416387001431DA /* CarplayInterfaceDelegate.swift */; };
 		2BDCA5642C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */; };
 		2BDCA5662C3E833A0081EB22 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5652C3E833A0081EB22 /* ErrorMessages.swift */; };
 		2BDCA5682C3E83A50081EB22 /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */; };
@@ -44,6 +48,10 @@
 		2B97DC902C3D2EC700856519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B97DC932C3D2EC700856519 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B97DC992C3D2EC900856519 /* Next callsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next callsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BB36A482C412F0C001431DA /* CarPlay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarPlay.framework; path = System/Library/Frameworks/CarPlay.framework; sourceTree = SDKROOT; };
+		2BB36A4B2C414CBF001431DA /* CarplayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarplayList.swift; sourceTree = "<group>"; };
+		2BB36A4D2C416305001431DA /* CarPlayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayDetail.swift; sourceTree = "<group>"; };
+		2BB36A4F2C416387001431DA /* CarplayInterfaceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarplayInterfaceDelegate.swift; sourceTree = "<group>"; };
 		2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
 		2BDCA5652C3E833A0081EB22 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
@@ -58,6 +66,8 @@
 		2BDCA57E2C4007740081EB22 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2BDCA5802C4007860081EB22 /* Contact+CNContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CNContact.swift"; sourceTree = "<group>"; };
 		2BDCA5822C4011F50081EB22 /* Call+Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Call+Contact.swift"; sourceTree = "<group>"; };
+		2BDCA5842C40285F0081EB22 /* Next-calls-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Next-calls-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2BDCA5872C402E780081EB22 /* Next calls.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Next calls.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB36A492C412F0C001431DA /* CarPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,7 @@
 				2B97DC8B2C3D2EC500856519 /* Next calls */,
 				2B97DC9C2C3D2EC900856519 /* Next callsTests */,
 				2B97DC8A2C3D2EC500856519 /* Products */,
+				2BB36A472C412F0C001431DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +111,9 @@
 		2B97DC8B2C3D2EC500856519 /* Next calls */ = {
 			isa = PBXGroup;
 			children = (
+				2BB36A4A2C414CAB001431DA /* CarPlay */,
+				2BDCA5872C402E780081EB22 /* Next calls.entitlements */,
+				2BDCA5842C40285F0081EB22 /* Next-calls-Info.plist */,
 				2BDCA5712C3ED76F0081EB22 /* ViewModels */,
 				2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */,
 				2BDCA56D2C3E8CC10081EB22 /* Views */,
@@ -125,6 +140,24 @@
 				2BDCA5782C3FCC490081EB22 /* CallListViewModelTests.swift */,
 			);
 			path = "Next callsTests";
+			sourceTree = "<group>";
+		};
+		2BB36A472C412F0C001431DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BB36A482C412F0C001431DA /* CarPlay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BB36A4A2C414CAB001431DA /* CarPlay */ = {
+			isa = PBXGroup;
+			children = (
+				2BB36A4B2C414CBF001431DA /* CarplayList.swift */,
+				2BB36A4D2C416305001431DA /* CarPlayDetail.swift */,
+				2BB36A4F2C416387001431DA /* CarplayInterfaceDelegate.swift */,
+			);
+			path = CarPlay;
 			sourceTree = "<group>";
 		};
 		2BDCA56D2C3E8CC10081EB22 /* Views */ = {
@@ -277,9 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BDCA5812C4007860081EB22 /* Contact+CNContact.swift in Sources */,
+				2BB36A4E2C416305001431DA /* CarPlayDetail.swift in Sources */,
 				2BDCA57F2C4007740081EB22 /* Contact.swift in Sources */,
 				2BDCA5732C3ED78B0081EB22 /* NextCallListViewModel.swift in Sources */,
 				2BDCA5752C3FC8F90081EB22 /* Call.swift in Sources */,
+				2BB36A4C2C414CBF001431DA /* CarplayList.swift in Sources */,
 				2B97DC8F2C3D2EC500856519 /* NextCallList.swift in Sources */,
 				2BDCA5772C3FC94D0081EB22 /* Call+Reminder.swift in Sources */,
 				2BDCA57B2C3FE7070081EB22 /* CallDetail.swift in Sources */,
@@ -291,6 +326,7 @@
 				2BDCA5642C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift in Sources */,
 				2BDCA57D2C4005520081EB22 /* ContactStore.swift in Sources */,
 				2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */,
+				2BB36A502C416387001431DA /* CarplayInterfaceDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,17 +473,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Next calls/Next calls.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Next calls/Preview Content\"";
-				DEVELOPMENT_TEAM = 52N37R27Z7;
+				DEVELOPMENT_TEAM = BDCC64DUG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Next-calls-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Next Calls";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need access to your contacts so we can match names with reminders";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "We need to access your reminders to find scheduled calls";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -457,8 +495,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "vandammey.Next-calls";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandammey.nextcalls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -474,17 +513,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Next calls/Next calls.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Next calls/Preview Content\"";
-				DEVELOPMENT_TEAM = 52N37R27Z7;
+				DEVELOPMENT_TEAM = BDCC64DUG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Next-calls-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Next Calls";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need access to your contacts so we can match names with reminders";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "We need to access your reminders to find scheduled calls";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -494,8 +535,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "vandammey.Next-calls";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandammey.nextcalls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

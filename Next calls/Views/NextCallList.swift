@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct NextCallList: View {
-    @StateObject var viewModel : NextCallListViewModel
+    @Bindable var viewModel : NextCallListViewModel
     
     var body: some View {
         NavigationSplitView {
             List(viewModel.calls) { item in
             //List([Call(reminder: Reminder(title: "test"), phone: "+32471423043")]) { item in
                 NavigationLink {
-                    CallDetail(call: item)
+                    CallDetail(call: item, viewModel: viewModel)
                 } label :{
                     Text(item.reminder.title)
                 }
+            }
+            .refreshable{
+                _ = viewModel.fetchReminders()
             }
             .navigationTitle("Calls")
             .navigationViewStyle(StackNavigationViewStyle())

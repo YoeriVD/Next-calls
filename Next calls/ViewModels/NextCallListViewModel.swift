@@ -7,8 +7,8 @@
 
 import Foundation
 
-class NextCallListViewModel : ObservableObject {
-    @Published var calls : [Call]
+@Observable class NextCallListViewModel {
+    var calls : [Call]
     private var contacts : [Contact] = []
     private var reminderStore : ReminderStore { ReminderStore.shared }
     private var contactStore : ContactStore { ContactStore.shared }
@@ -27,8 +27,8 @@ class NextCallListViewModel : ObservableObject {
     convenience init() {
         self.init(reminders: [], contacts: [])
     }
-    
-    func fetchReminders() -> NextCallListViewModel {
+    func fetchReminders()-> NextCallListViewModel{ return fetchReminders{} }
+    func fetchReminders(completion: @escaping ()-> Void) -> NextCallListViewModel {
         Task{
             do {
                 try await reminderStore.requestAccess()
@@ -41,7 +41,9 @@ class NextCallListViewModel : ObservableObject {
                 let calls = identifiedContacts + inlineNumbers
                 DispatchQueue.main.async{
                     self.calls = calls
+                    completion()
                 }
+                
             } catch {
                 print(error.localizedDescription)
             }
@@ -74,5 +76,19 @@ class NextCallListViewModel : ObservableObject {
         .reduce([], +)
     }
     
-    
+    func complete(call: Call) async {
+        do{
+            try await reminderStore.complete(reminder: call.reminder)
+            let index = self.calls.firstIndex{ listItem in
+                listItem.id == call.id
+            }
+            guard let index else {return}
+            DispatchQueue.main.async{
+                self.calls.remove(at: index);
+            }
+        }
+        catch{
+            return
+        }
+    }
 }

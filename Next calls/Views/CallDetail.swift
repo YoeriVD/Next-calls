@@ -9,11 +9,18 @@ import SwiftUI
 
 struct CallDetail: View {
     let call: Call
-    
+    let viewModel: NextCallListViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     func makeCall() {
         guard let url = call.getPhoneUrl() else { return }
         print("calling " + url.path())
         UIApplication.shared.open(url)
+    }
+    func complete() {
+        Task{
+            await viewModel.complete(call: call)
+        }
+        presentationMode.wrappedValue.dismiss()
     }
     
     var body: some View {
@@ -26,6 +33,7 @@ struct CallDetail: View {
                 .buttonStyle(BorderedProminentButtonStyle())
                 .font(.title)
             Spacer()
+            Button("Complete", systemImage: "checkmark", action: complete)
         }
         
     }
@@ -36,6 +44,7 @@ struct CallDetail: View {
         call: Call(
             reminder: Reminder(title: "bellen met +32 477 34 65 89"),
             phone: "+32 477 34 65 89"
-        )
+        ),
+        viewModel: NextCallListViewModel()
     )
 }

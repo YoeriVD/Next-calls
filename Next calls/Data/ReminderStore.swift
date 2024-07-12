@@ -59,4 +59,17 @@ final class ReminderStore{
             }
         return reminders
     }
+    
+    func complete(reminder: Reminder) async throws {
+        let predicate = ekStore.predicateForReminders(in: nil)
+        let ekReminders = try await ekStore.reminders(matching: predicate)
+        let srcReminder = ekReminders
+            .filter{ ekReminder in !ekReminder.isCompleted }
+            .first { ekReminder in
+            ekReminder.title == reminder.title
+        }
+        guard let srcReminder else { throw ErrorMessages.failedReadingReminders }
+        srcReminder.isCompleted = true
+        try ekStore.save(srcReminder, commit: true)
+    }
 }
