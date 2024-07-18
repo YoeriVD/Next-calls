@@ -15,12 +15,12 @@ extension CarPlaySceneDelegate : CPInterfaceControllerDelegate {
         }
     }
     func templateDidAppear(_ aTemplate: CPTemplate, animated: Bool) {
-        
+        // do nothing
     }
     func templateWillDisappear(_ aTemplate: CPTemplate, animated: Bool) {
-        
+        // do nothing
     }
     func templateDidDisappear(_ aTemplate: CPTemplate, animated: Bool) {
-        
+        // do nothing
     }
 }
