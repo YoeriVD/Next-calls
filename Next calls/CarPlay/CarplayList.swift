@@ -15,11 +15,13 @@ struct CarplayList {
     
     var template: CPListTemplate = CPListTemplate(title: "Next calls", sections: [])
     func update(){
-        template.updateSections([self.getSection(), CPListSection(items: [refresh])])
+        _ = viewModel.fetchReminders {
+            template.updateSections([self.getSection(), CPListSection(items: [refresh])])
+        }
     }
     
     var refresh : CPListItem {
-        var item = CPListItem(text: nil, detailText: nil, image: UIImage(systemName: "arrow.clockwise.circle"))
+        let item = CPListItem(text: nil, detailText: nil, image: UIImage(systemName: "arrow.clockwise.circle"))
         
         item.handler = { item, completion in
             _ = viewModel.fetchReminders {
