@@ -42,7 +42,7 @@ final class ContactStore{
         guard isAvailable else {
             throw ErrorMessages.accessDenied
         }
-        let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey]
+        let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey, CNContactOrganizationNameKey]
         let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
         var contacts = [CNContact]()
         try cnStore.enumerateContacts(with: request){(contact, stop) in

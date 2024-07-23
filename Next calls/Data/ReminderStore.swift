@@ -45,7 +45,17 @@ final class ReminderStore{
         guard isAvailable else {
             throw ErrorMessages.accessDenied
         }
-        let predicate = ekStore.predicateForReminders(in: nil)
+        // filter on specific list
+        let calendars = ekStore.calendars(for: .reminder)
+        let nextActions = calendars.first { cal in
+            return cal.title == "Volgende acties"
+        }
+        guard let nextActions else {
+            throw ErrorMessages.noNextActionList
+        }
+        
+        let predicate = ekStore.predicateForReminders(in: [nextActions])
+        
         let ekReminders = try await ekStore.reminders(matching: predicate)
         let reminders: [Reminder] = try ekReminders
             .filter{reminder in !reminder.isCompleted }

@@ -17,9 +17,12 @@ extension Contact {
             "\(contact.familyName), \(contact.givenName)",
             "\(contact.givenName) \(contact.familyName)",
             "\(contact.givenName), \(contact.familyName)",
-            contact.nickname
+            contact.nickname,
+            contact.organizationName
         ].compactMap{index in
             return index.lowercased().trimmingCharacters(in: CharacterSet.whitespaces)
+        }.filter{ index in
+            return index != "," && index != ""
         }
         
         phone = try Phone(with: contact.phoneNumbers.first?.value)
