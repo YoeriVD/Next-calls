@@ -30,6 +30,8 @@ final class ContactStore{
             }
         case .denied:
             throw ErrorMessages.accessDenied
+        case .limited:
+            throw ErrorMessages.limited
         @unknown default:
             throw ErrorMessages.unknown
         }
