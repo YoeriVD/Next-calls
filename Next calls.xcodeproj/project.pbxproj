@@ -29,6 +29,8 @@
 		2BDCA57F2C4007740081EB22 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA57E2C4007740081EB22 /* Contact.swift */; };
 		2BDCA5812C4007860081EB22 /* Contact+CNContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5802C4007860081EB22 /* Contact+CNContact.swift */; };
 		2BDCA5832C4011F50081EB22 /* Call+Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA5822C4011F50081EB22 /* Call+Contact.swift */; };
+		2B971FDFF01CF940268B3274 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1D4D8C36438A4BE59DCAD4 /* SettingsManager.swift */; };
+		2B3D05444949D749A4881470 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8FFBECCB094DE4BA87C0 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		2BDCA5822C4011F50081EB22 /* Call+Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Call+Contact.swift"; sourceTree = "<group>"; };
 		2BDCA5842C40285F0081EB22 /* Next-calls-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Next-calls-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2BDCA5872C402E780081EB22 /* Next calls.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Next calls.entitlements"; sourceTree = "<group>"; };
+		2B1D4D8C36438A4BE59DCAD4 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		2BCE8FFBECCB094DE4BA87C0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +169,7 @@
 			children = (
 				2B97DC8E2C3D2EC500856519 /* NextCallList.swift */,
 				2BDCA57A2C3FE7070081EB22 /* CallDetail.swift */,
-			);
+				2BCE8FFBECCB094DE4BA87C0 /* SettingsView.swift */,);
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -175,7 +179,7 @@
 				2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */,
 				2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */,
 				2BDCA57C2C4005520081EB22 /* ContactStore.swift */,
-			);
+				2B1D4D8C36438A4BE59DCAD4 /* SettingsManager.swift */,);
 			path = Data;
 			sourceTree = "<group>";
 		};
@@ -327,7 +331,8 @@
 				2BDCA57D2C4005520081EB22 /* ContactStore.swift in Sources */,
 				2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */,
 				2BB36A502C416387001431DA /* CarplayInterfaceDelegate.swift in Sources */,
-			);
+				2B971FDFF01CF940268B3274 /* SettingsManager.swift in Sources */,
+				2B3D05444949D749A4881470 /* SettingsView.swift in Sources */,);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2B97DC952C3D2EC900856519 /* Sources */ = {

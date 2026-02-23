@@ -15,6 +15,7 @@ enum ErrorMessages: LocalizedError {
     case noTitle
     case noPhone
     case noNextActionList
+    case noSelectedList
     case unknown
     
     var errorDescription: String? {
@@ -44,6 +45,10 @@ enum ErrorMessages: LocalizedError {
             return NSLocalizedString(
                 "Reminders does not have a list called Volgende acties",
                 comment: "Hardcoded list Volgende acties is a requirement.")
+        case .noSelectedList:
+            return NSLocalizedString(
+                "The selected reminder list was not found. Please check your settings.",
+                comment: "Selected list not found error description.")
         case .unknown:
             return NSLocalizedString("An unknown error occurred.", comment: "unknown error description")
         }

@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import Combine
 
 @Observable class NextCallListViewModel {
     var calls : [Call]
     private var contacts : [Contact] = []
     private var reminderStore : ReminderStore { ReminderStore.shared }
     private var contactStore : ContactStore { ContactStore.shared }
+    private var settingsManager : SettingsManager { SettingsManager.shared }
+    private var cancellables = Set<AnyCancellable>()
     
     init(reminders: [Reminder], contacts: [Contact]) {
         self.calls = []
@@ -23,10 +26,23 @@ import Foundation
             print(error.localizedDescription)
         }
         
+        // Listen for settings changes
+        setupSettingsObserver()
     }
     convenience init() {
         self.init(reminders: [], contacts: [])
     }
+    
+    private func setupSettingsObserver() {
+        settingsManager.$selectedListName
+            .dropFirst() // Skip the initial value
+            .sink { [weak self] _ in
+                // Refresh when list selection changes
+                _ = self?.fetchReminders()
+            }
+            .store(in: &cancellables)
+    }
+    
     func fetchReminders()-> NextCallListViewModel{ return fetchReminders{} }
     func fetchReminders(completion: @escaping ()-> Void) -> NextCallListViewModel {
         Task{

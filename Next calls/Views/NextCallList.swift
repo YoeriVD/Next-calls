@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NextCallList: View {
     @Bindable var viewModel : NextCallListViewModel
+    @State private var showingSettings = false
     
     var body: some View {
         NavigationSplitView {
@@ -25,6 +26,18 @@ struct NextCallList: View {
             }
             .navigationTitle("Calls")
             .navigationViewStyle(StackNavigationViewStyle())
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Label("Settings", systemImage: "gear")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
+            }
         } detail: {
             Text("Select")
         }
