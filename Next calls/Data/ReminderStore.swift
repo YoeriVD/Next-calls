@@ -46,6 +46,12 @@ final class ReminderStore{
         guard isAvailable else {
             throw ErrorMessages.accessDenied
         }
+        
+        // Return empty array if no list is selected
+        guard settings.hasSelectedList else {
+            return []
+        }
+        
         // filter on specific list
         let calendars = ekStore.calendars(for: .reminder)
         let selectedList = calendars.first { cal in

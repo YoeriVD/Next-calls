@@ -14,9 +14,8 @@ final class SettingsManager: ObservableObject {
     
     private let defaults = UserDefaults.standard
     private let selectedListKey = "selectedReminderList"
-    private let defaultListName = "Volgende acties"
     
-    /// The currently selected reminder list name
+    /// The currently selected reminder list name (nil if not set)
     @Published var selectedListName: String {
         didSet {
             defaults.set(selectedListName, forKey: selectedListKey)
@@ -24,12 +23,12 @@ final class SettingsManager: ObservableObject {
     }
     
     private init() {
-        // Load saved value or use default
-        self.selectedListName = defaults.string(forKey: selectedListKey) ?? defaultListName
+        // Load saved value or use empty string if not set
+        self.selectedListName = defaults.string(forKey: selectedListKey) ?? ""
     }
     
-    /// Reset to default list name
-    func resetToDefault() {
-        selectedListName = defaultListName
+    /// Check if a list has been selected
+    var hasSelectedList: Bool {
+        !selectedListName.isEmpty
     }
 }

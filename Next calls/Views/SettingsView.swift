@@ -30,6 +30,7 @@ struct SettingsView: View {
                             .foregroundStyle(.secondary)
                     } else {
                         Picker("Reminder List", selection: $settings.selectedListName) {
+                            Text("None").tag("")
                             ForEach(availableLists, id: \.self) { listName in
                                 Text(listName).tag(listName)
                             }
@@ -40,14 +41,6 @@ struct SettingsView: View {
                     Text("Task List")
                 } footer: {
                     Text("Select which reminder list to use for displaying calls. The app will show incomplete reminders from this list.")
-                }
-                
-                Section {
-                    Button("Reset to Default") {
-                        settings.resetToDefault()
-                    }
-                } footer: {
-                    Text("Resets the selected list to \"Volgende acties\"")
                 }
             }
             .navigationTitle("Settings")
