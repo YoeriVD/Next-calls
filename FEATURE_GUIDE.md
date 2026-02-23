@@ -49,11 +49,12 @@ The Next-calls app now allows you to choose which reminder list to use for displ
 - The app gracefully handles missing lists
 - Clear error messages guide you to fix issues
 
-## Default Behavior
+## First Launch Experience
 
-- **First Launch**: The app uses "Volgende acties" by default
-- **No Selection**: If no list is selected or found, defaults to "Volgende acties"
-- **Backward Compatible**: Existing users will see the same list as before
+- **Initial State**: The app shows an empty state with a message prompting you to select a list
+- **Getting Started**: Tap the "Open Settings" button to choose your reminder list
+- **After Selection**: Once you select a list, your calls will appear immediately
+- **Persistence**: Your selection is saved and will be used on subsequent launches
 
 ## Screenshots
 

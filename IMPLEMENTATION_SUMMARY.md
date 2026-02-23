@@ -12,11 +12,12 @@ This implementation adds the ability for users to select which reminder list to 
 - Singleton pattern with `SettingsManager.shared`
 - Uses `@Published` property wrapper for reactive updates
 - Persists selected list name to UserDefaults
-- Defaults to "Volgende acties" for backward compatibility
-- Provides `resetToDefault()` method
+- Defaults to empty string (no list selected on fresh install)
+- Provides `hasSelectedList` computed property
 
 **Properties**:
-- `selectedListName`: The currently selected reminder list (persisted)
+- `selectedListName`: The currently selected reminder list (persisted, empty if not set)
+- `hasSelectedList`: Boolean indicating if a list has been selected
 
 ### 2. Updated ReminderStore (`Data/ReminderStore.swift`)
 **Changes**:
@@ -34,17 +35,16 @@ This implementation adds the ability for users to select which reminder list to 
 **Features**:
 - SwiftUI Form-based interface
 - Picker for selecting reminder list from available lists
+- Includes "None" option to deselect current list
 - Loading state while fetching lists
 - Empty state handling
-- Reset to default button
 - Done button to dismiss
 - Async list loading with proper error handling
 
 **UI Structure**:
 - NavigationStack wrapper
-- Form with sections:
-  - Task List section (with Picker)
-  - Reset section (with button)
+- Form with section:
+  - Task List section (with Picker including "None" option)
 - Descriptive footer text for user guidance
 
 ### 4. Updated NextCallList (`Views/NextCallList.swift`)

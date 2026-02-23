@@ -6,16 +6,14 @@
 - iOS device or simulator running iOS 17.0 or later
 - Xcode 15.0 or later
 - Multiple reminder lists created in the Reminders app
-- At least one list named "Volgende acties" for default behavior testing
 - CarPlay simulator or compatible vehicle for CarPlay testing
 
 ### Test Data Setup
 
 Create the following reminder lists in the Reminders app:
-1. **Volgende acties** - Default list (with some test reminders)
-2. **Personal** - Alternative list with personal call reminders
-3. **Work** - Work-related call reminders
-4. **Test Empty** - Empty list (no reminders)
+1. **Personal** - Alternative list with personal call reminders
+2. **Work** - Work-related call reminders
+3. **Test Empty** - Empty list (no reminders)
 
 Each list should contain reminders with:
 - Names (e.g., "Call John")
@@ -27,11 +25,12 @@ Each list should contain reminders with:
 ### SettingsManager Tests
 
 #### Test 1: Default Value
-**Objective**: Verify default list name is "Volgende acties"
+**Objective**: Verify no default list is set on fresh install
 ```swift
 func testDefaultListName() {
     let settings = SettingsManager()
-    XCTAssertEqual(settings.selectedListName, "Volgende acties")
+    XCTAssertEqual(settings.selectedListName, "")
+    XCTAssertFalse(settings.hasSelectedList)
 }
 ```
 
@@ -47,14 +46,16 @@ func testPersistence() {
 }
 ```
 
-#### Test 3: Reset to Default
-**Objective**: Verify reset functionality
+#### Test 3: Has Selected List Check
+**Objective**: Verify hasSelectedList property works correctly
 ```swift
-func testResetToDefault() {
+func testHasSelectedList() {
     let settings = SettingsManager.shared
+    settings.selectedListName = ""
+    XCTAssertFalse(settings.hasSelectedList)
+    
     settings.selectedListName = "Personal"
-    settings.resetToDefault()
-    XCTAssertEqual(settings.selectedListName, "Volgende acties")
+    XCTAssertTrue(settings.hasSelectedList)
 }
 ```
 
@@ -118,24 +119,25 @@ func testFilterBySelectedList() async throws {
 
 **Expected**: Selection persists across app restarts
 
-#### Test 9: Empty List Handling
+#### Test 9: No List Selected Handling
 **Steps**:
-1. Select "Test Empty" list
-2. Verify main view shows no calls
+1. Start with no list selected (fresh install state)
+2. Verify main view shows empty state
+3. Verify message prompts user to select a list
+4. Tap "Open Settings" button
+5. Select a list and return
+6. Verify calls appear
+
+**Expected**: Graceful empty state when no list is selected
+
+#### Test 10: Empty List Handling
+**Steps**:
+1. Select "Test Empty" list (a list with no reminders)
+2. Verify main view shows empty list
 3. Pull to refresh
 4. Verify no errors occur
 
-**Expected**: Graceful handling of empty lists
-
-#### Test 10: Reset to Default
-**Steps**:
-1. Select any non-default list
-2. Open Settings
-3. Tap "Reset to Default"
-4. Verify list changes to "Volgende acties"
-5. Verify main view updates
-
-**Expected**: List resets and view refreshes automatically
+**Expected**: Graceful handling of empty reminder lists
 
 ### CarPlay Tests
 
@@ -290,13 +292,16 @@ func testFilterBySelectedList() async throws {
 
 **Expected**: All existing features continue to work
 
-#### Test 28: Default Behavior
+#### Test 28: Fresh Install Behavior
 **Steps**:
-1. Fresh install of app
-2. Don't change any settings
-3. Verify "Volgende acties" is used by default
+1. Fresh install of app (or clear app data)
+2. Launch app
+3. Verify empty state is shown with message
+4. Verify "Open Settings" button is visible
+5. Tap button and select a list
+6. Verify calls appear after selection
 
-**Expected**: Backward compatible with previous behavior
+**Expected**: No default list, user must explicitly select
 
 ## Test Results Template
 
@@ -313,12 +318,13 @@ Priority 1 (Must Pass):
 - Test 6: Settings Button Visibility
 - Test 7: List Selection
 - Test 8: Setting Persistence
+- Test 9: No List Selected Handling
 - Test 11: CarPlay Initial State
 - Test 14: Missing List Error
-- Test 28: Default Behavior
+- Test 28: Fresh Install Behavior
 
 Priority 2 (Should Pass):
-- Test 10: Reset to Default
+- Test 10: Empty List Handling
 - Test 12: CarPlay Live Update
 - Test 15: No Reminder Lists
 - Test 17: List Loading Speed

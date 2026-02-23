@@ -32,8 +32,8 @@
 - [x] Singleton pattern implemented
 - [x] UserDefaults integration
 - [x] @Published property for reactive updates
-- [x] Default value: "Volgende acties"
-- [x] Reset to default functionality
+- [x] No default value (starts with empty string)
+- [x] hasSelectedList helper property
 - [x] Private initializer
 
 ### ✅ Reminder Store Updates
@@ -46,10 +46,9 @@
 ### ✅ Settings View UI
 - [x] NavigationStack wrapper
 - [x] Form-based layout
-- [x] Picker for list selection
+- [x] Picker for list selection with "None" option
 - [x] Loading state handling
 - [x] Empty state handling
-- [x] Reset button
 - [x] Done button in toolbar
 - [x] Async list loading
 - [x] Descriptive footer text
@@ -112,7 +111,7 @@ UI updates with new calls
 - [x] Value type: String
 - [x] Auto-save on change (didSet)
 - [x] Auto-load on init
-- [x] Backward compatible default
+- [x] Defaults to empty string (no list selected)
 
 ## CarPlay Verification
 

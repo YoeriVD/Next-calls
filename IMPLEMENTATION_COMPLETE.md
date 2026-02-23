@@ -166,11 +166,11 @@ CarPlay Flow:
 - Shared data layer
 - Consistent experience
 
-### 5. **Backward Compatibility** ✅
-- Defaults to "Volgende acties"
-- Existing users unaffected
-- No migration needed
-- Graceful fallback
+### 5. **User Control** ✅
+- No default list enforced
+- Users must explicitly select
+- "None" option available
+- Clear empty state guidance
 
 ### 6. **Error Handling** ✅
 - Missing list detection

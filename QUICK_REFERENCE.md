@@ -85,11 +85,14 @@ let settings = SettingsManager.shared
 // Get current selection
 let currentList = settings.selectedListName
 
+// Check if list is selected
+let hasSelection = settings.hasSelectedList
+
 // Change selection
 settings.selectedListName = "Work"
 
-// Reset to default
-settings.resetToDefault()
+// Clear selection
+settings.selectedListName = ""
 ```
 
 ### ReminderStore
@@ -133,22 +136,19 @@ EventKit (fetches data)
 ## ⚙️ Configuration
 
 ### Default Settings
-- **Default List**: "Volgende acties"
+- **Default List**: None (empty string - user must select)
 - **Storage Key**: "selectedReminderList"
 - **Storage Type**: UserDefaults
 
 ### Customization
-Change defaults in `SettingsManager.swift`:
-```swift
-private let defaultListName = "Your Default List"
-```
+No default list is set. Users must explicitly select a list on first use.
 
 ## 🐛 Common Issues
 
-### Issue: Selected list not found
-**Solution**: The list was deleted from Reminders app
+### Issue: Selected list not found or no list selected
+**Solution**: The list was deleted from Reminders app or not yet selected
 - Open Settings in Next-calls
-- Select a different list or reset to default
+- Select a valid reminder list
 
 ### Issue: Settings not saving
 **Solution**: UserDefaults issue
