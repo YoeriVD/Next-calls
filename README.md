@@ -7,23 +7,24 @@ A native iOS app that looks through your reminders and selects only those that a
 
 ### ✨ New: Customizable Reminder List Selection
 
-You can now choose which reminder list to use for your calls! The app no longer requires a hardcoded list name. Simply:
-1. Tap the ⚙️ Settings button in the app
-2. Select your preferred reminder list
+You can now choose which reminder list to use for your calls! The app requires you to explicitly select a reminder list before use. Simply:
+1. On first launch, tap "Open Settings" from the empty state
+2. Select your preferred reminder list from the available options
 3. Your selection is automatically saved and used in both iOS and CarPlay
 
-The default list is still "Volgende acties" for backward compatibility.
+**No default list** - You have full control over which list to use, making the app work for any language or workflow!
 
 ## Features
 
 - 📱 **iOS Native App** - Built with SwiftUI for modern iOS
 - 🚗 **CarPlay Integration** - Access your calls safely while driving
 - 📋 **Smart Call Detection** - Automatically identifies call-related reminders
-- ⚙️ **Customizable Lists** - Choose any reminder list (new!)
+- ⚙️ **Explicit List Selection** - Choose any reminder list (required on first launch!)
 - 💾 **Persistent Settings** - Your preferences are saved
 - 🔄 **Auto-Refresh** - Real-time updates when settings change
 - 📞 **Contact Integration** - Matches reminders with your contacts
 - 🔢 **Phone Number Detection** - Recognizes inline phone numbers
+- 🌍 **International** - No hardcoded language assumptions
 
 ## Requirements
 
@@ -45,6 +46,8 @@ The default list is still "Volgende acties" for backward compatibility.
 - [**Feature Guide**](FEATURE_GUIDE.md) - User guide with usage instructions
 - [**Implementation Summary**](IMPLEMENTATION_SUMMARY.md) - Technical documentation
 - [**Test Plan**](TEST_PLAN.md) - Comprehensive testing guide
+- [**Recent Changes**](REMOVE_DEFAULT_LIST_CHANGES.md) - Default list removal details
+- [**Final Summary**](FINAL_IMPLEMENTATION_SUMMARY.md) - Complete implementation overview
 
 ## Good to know
 
