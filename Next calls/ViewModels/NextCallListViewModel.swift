@@ -38,7 +38,12 @@ import Combine
             .dropFirst() // Skip the initial value
             .sink { [weak self] _ in
                 // Refresh when list selection changes
-                _ = self?.fetchReminders()
+                guard let self = self else { return }
+                Task {
+                    _ = await MainActor.run {
+                        self.fetchReminders()
+                    }
+                }
             }
             .store(in: &cancellables)
     }
