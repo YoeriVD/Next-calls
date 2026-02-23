@@ -4,7 +4,7 @@
 ## Next calls
 
 A native iOS app that looks through your reminders and selects only those that are about calls, and makes these available through carplay.
-Currently it only looks in a list named "Volgende acties" ("next actions") as I am the only user and that list is where I put my calls :') 
+You can select which reminder list to use via the Settings screen. 
 
 ## Good to know
 

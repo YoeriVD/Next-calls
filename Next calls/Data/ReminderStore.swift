@@ -11,6 +11,7 @@ import EventKit
 final class ReminderStore{
     static let shared = ReminderStore()
     private let ekStore = EKEventStore()
+    private let settings = SettingsManager.shared
     
     var isAvailable: Bool {
         EKEventStore.authorizationStatus(for: .reminder) == .fullAccess
@@ -45,16 +46,22 @@ final class ReminderStore{
         guard isAvailable else {
             throw ErrorMessages.accessDenied
         }
-        // filter on specific list
-        let calendars = ekStore.calendars(for: .reminder)
-        let nextActions = calendars.first { cal in
-            return cal.title == "Volgende acties"
-        }
-        guard let nextActions else {
-            throw ErrorMessages.noNextActionList
+        
+        // Return empty array if no list is selected
+        guard settings.hasSelectedList else {
+            return []
         }
         
-        let predicate = ekStore.predicateForReminders(in: [nextActions])
+        // filter on specific list
+        let calendars = ekStore.calendars(for: .reminder)
+        let selectedList = calendars.first { cal in
+            return cal.title == settings.selectedListName
+        }
+        guard let selectedList else {
+            throw ErrorMessages.noSelectedList
+        }
+        
+        let predicate = ekStore.predicateForReminders(in: [selectedList])
         
         let ekReminders = try await ekStore.reminders(matching: predicate)
         let reminders: [Reminder] = try ekReminders
@@ -68,6 +75,15 @@ final class ReminderStore{
                 }
             }
         return reminders
+    }
+    
+    /// Fetch all available reminder lists
+    func fetchAllLists() -> [String] {
+        guard isAvailable else {
+            return []
+        }
+        let calendars = ekStore.calendars(for: .reminder)
+        return calendars.map { $0.title }.sorted()
     }
     
     func complete(reminder: Reminder) async throws {

@@ -16,7 +16,14 @@ struct CarplayList {
     var template: CPListTemplate = CPListTemplate(title: "Next calls", sections: [])
     func update(){
         _ = viewModel.fetchReminders {
-            template.updateSections([self.getSection(), CPListSection(items: [refresh])])
+            let sections = self.getSection()
+            if sections.items.isEmpty {
+                // Show message when no list is selected or no calls available
+                let emptyItem = CPListItem(text: "No calls available", detailText: "Select a reminder list in Settings")
+                template.updateSections([CPListSection(items: [emptyItem]), CPListSection(items: [refresh])])
+            } else {
+                template.updateSections([sections, CPListSection(items: [refresh])])
+            }
         }
     }
     

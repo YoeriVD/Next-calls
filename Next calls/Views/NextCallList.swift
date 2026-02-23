@@ -9,22 +9,54 @@ import SwiftUI
 
 struct NextCallList: View {
     @Bindable var viewModel : NextCallListViewModel
+    @State private var showingSettings = false
+    @ObservedObject private var settings = SettingsManager.shared
     
     var body: some View {
         NavigationSplitView {
-            List(viewModel.calls) { item in
-            //List([Call(reminder: Reminder(title: "test"), phone: "+32471423043")]) { item in
-                NavigationLink {
-                    CallDetail(call: item, viewModel: viewModel)
-                } label :{
-                    Text(item.reminder.title)
+            ZStack {
+                if !settings.hasSelectedList {
+                    // Show empty state when no list is selected
+                    ContentUnavailableView {
+                        Label("No List Selected", systemImage: "list.bullet.clipboard")
+                    } description: {
+                        Text("Please select a reminder list in Settings to view your calls")
+                    } actions: {
+                        Button {
+                            showingSettings = true
+                        } label: {
+                            Text("Open Settings")
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                } else {
+                    // Show normal list when a list is selected
+                    List(viewModel.calls) { item in
+                        NavigationLink {
+                            CallDetail(call: item, viewModel: viewModel)
+                        } label :{
+                            Text(item.reminder.title)
+                        }
+                    }
+                    .refreshable{
+                        _ = viewModel.fetchReminders()
+                    }
                 }
-            }
-            .refreshable{
-                _ = viewModel.fetchReminders()
             }
             .navigationTitle("Calls")
             .navigationViewStyle(StackNavigationViewStyle())
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Label("Settings", systemImage: "gear")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
+            }
         } detail: {
             Text("Select")
         }

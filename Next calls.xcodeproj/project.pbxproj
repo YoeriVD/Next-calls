@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3D05444949D749A4881470 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8FFBECCB094DE4BA87C0 /* SettingsView.swift */; };
+		2B971FDFF01CF940268B3274 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1D4D8C36438A4BE59DCAD4 /* SettingsManager.swift */; };
 		2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */; };
 		2B97DC8F2C3D2EC500856519 /* NextCallList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97DC8E2C3D2EC500856519 /* NextCallList.swift */; };
 		2B97DC912C3D2EC700856519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97DC902C3D2EC700856519 /* Assets.xcassets */; };
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1D4D8C36438A4BE59DCAD4 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		2B97DC892C3D2EC500856519 /* Next calls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next calls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97DC8C2C3D2EC500856519 /* Next_callsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_callsApp.swift; sourceTree = "<group>"; };
 		2B97DC8E2C3D2EC500856519 /* NextCallList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCallList.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		2BB36A4B2C414CBF001431DA /* CarplayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarplayList.swift; sourceTree = "<group>"; };
 		2BB36A4D2C416305001431DA /* CarPlayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayDetail.swift; sourceTree = "<group>"; };
 		2BB36A4F2C416387001431DA /* CarplayInterfaceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarplayInterfaceDelegate.swift; sourceTree = "<group>"; };
+		2BCE8FFBECCB094DE4BA87C0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
 		2BDCA5652C3E833A0081EB22 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		2BDCA5672C3E83A50081EB22 /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			children = (
 				2B97DC8E2C3D2EC500856519 /* NextCallList.swift */,
 				2BDCA57A2C3FE7070081EB22 /* CallDetail.swift */,
+				2BCE8FFBECCB094DE4BA87C0 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				2BDCA5632C3E826D0081EB22 /* EKEventStore+AsyncFetch.swift */,
 				2BDCA56B2C3E84AD0081EB22 /* ReminderStore.swift */,
 				2BDCA57C2C4005520081EB22 /* ContactStore.swift */,
+				2B1D4D8C36438A4BE59DCAD4 /* SettingsManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -327,6 +333,8 @@
 				2BDCA57D2C4005520081EB22 /* ContactStore.swift in Sources */,
 				2B97DC8D2C3D2EC500856519 /* Next_callsApp.swift in Sources */,
 				2BB36A502C416387001431DA /* CarplayInterfaceDelegate.swift in Sources */,
+				2B971FDFF01CF940268B3274 /* SettingsManager.swift in Sources */,
+				2B3D05444949D749A4881470 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Next calls/Preview Content\"";
-				DEVELOPMENT_TEAM = BDCC64DUG6;
+				DEVELOPMENT_TEAM = 52N37R27Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Next-calls-Info.plist";
@@ -518,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Next calls/Preview Content\"";
-				DEVELOPMENT_TEAM = BDCC64DUG6;
+				DEVELOPMENT_TEAM = 52N37R27Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Next-calls-Info.plist";
